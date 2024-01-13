@@ -1,8 +1,5 @@
 .idea
 .vscode
-nodemon.json
 sample.js
-swagger.yaml
 node_modules
-databaseMedia
 environmentVariables
