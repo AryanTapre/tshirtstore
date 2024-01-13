@@ -23,6 +23,7 @@ const facebookCallbackHandlerRouter = express.Router();
 const githubLoginRouter = express.Router();
 const githubCallbackHandlerRouter = express.Router();
 const regenerateAccessRefreshTokenRouter = express.Router();
+const deleteUserDataRouter = express.Router();
 
 const {
     logout,
@@ -44,11 +45,13 @@ const {
     facebookCallbackHandler,
     githubLogin,
     githubCallbackHandler,
-    regenerateAccessRefreshTokens
+    regenerateAccessRefreshTokens,
+    deleteUserData
 } = require('../controllers/userController');
 
 // TODO: login routes
 loginRouter.route("/login").post(login);
+deleteUserDataRouter.route("/users/delete-data").get(deleteUserData);
 
 googleLoginRouter.route("/login/auth/google").get(googleAuthenticate,googleLogin);
 googleCallbackHandlerRouter.route("/auth/google/callback").get(passport.authenticate('google'),googleCallbackHandler);
@@ -102,5 +105,6 @@ module.exports = {
     facebookCallbackHandlerRouter,
     githubLoginRouter,
     githubCallbackHandlerRouter,
-    regenerateAccessRefreshTokenRouter
+    regenerateAccessRefreshTokenRouter,
+    deleteUserDataRouter
 }

@@ -113,7 +113,8 @@ const {
         facebookCallbackHandlerRouter,
         githubLoginRouter,
         githubCallbackHandlerRouter,
-        regenerateAccessRefreshTokenRouter
+        regenerateAccessRefreshTokenRouter,
+        deleteUserDataRouter
 } = require('../routes/user');
 
 const {productRouter} = require('../routes/product')
@@ -164,6 +165,8 @@ app.use('/api/v1',githubCallbackHandlerRouter);
 
 //re-generate access refresh tokens router
 app.use('/api/v1',regenerateAccessRefreshTokenRouter);
+
+app.use('/api/v1',deleteUserDataRouter)
 
 app.get("/",(request,response) => {
     response.render("home")

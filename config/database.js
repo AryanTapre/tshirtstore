@@ -5,7 +5,6 @@ const app = express();
 
 const DB_NAME = require("../constants")
 
-
 //TODO: PROFESSIONAL METHOD TO CONNECT WITH DATABASE
 const connectWithDB = async () => {
     try {

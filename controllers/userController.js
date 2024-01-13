@@ -8,6 +8,16 @@ const crypto = require('crypto');
 const passport = require('passport')
 const jwt = require('jsonwebtoken');
 
+const deleteUserData = (request,response,_) => {
+    response
+        .status(200)
+        .send("<h3>Represents how to Delete User's Data</h3>")
+        .json({
+        success: true,
+        message: "represents how to delete data"
+    })
+}
+
 const googleLogin = (request,response,_) => {
     response.send("login with Google");
     console.log("inside Google Login router....");
@@ -558,3 +568,4 @@ exports.userDashboard = bigPromise(userDashboard);
 exports.changePassword = bigPromise(changePassword);
 exports.managerAllUsers = bigPromise(managerAllUsers);
 exports.regenerateAccessRefreshTokens = bigPromise(regenerateAccessRefreshTokens)
+exports.deleteUserData = bigPromise(deleteUserData);
