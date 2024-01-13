@@ -165,6 +165,9 @@ app.use('/api/v1',githubCallbackHandlerRouter);
 //re-generate access refresh tokens router
 app.use('/api/v1',regenerateAccessRefreshTokenRouter);
 
+app.get("/",(request,response) => {
+    response.render("home")
+})
 app.get("/signup",(request,response) => {
     response.render("signup")
 })

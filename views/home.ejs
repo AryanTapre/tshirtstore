@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>glow effect</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html,body {
+            height: 100%;
+            width: 100%;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 20px;
+            padding: 0 20px;
+            background: #030303;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        main {
+            text-align: center;
+            margin: 0 auto;
+            max-width: 800px;
+        }
+
+        p {
+            text-align: left;
+            padding: 0 20px;
+            color: bisque;
+        }
+
+        code {
+            color: firebrick;
+        }
+
+        .glow {
+            border-radius: 14px;
+            margin: 140px;
+            padding: 20px;
+            box-shadow: rgba(10, 100, 202, 0.8) 0 0 90px 33px;
+        }
+        .links {
+            display: block;
+        }
+        .repo {
+            margin: 10px;
+        }
+        #sub {
+            color: aquamarine;
+        }
+    </style>
+</head>
+<body>
+<main>
+    <h2>
+        Tshirtstore Backend
+    </h2>
+
+    <p class="glow" >
+        Tshirtstore Is In Production Now. <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; <span id="sub">use it to power Frontends</span>
+    </p>
+
+    <div class="links">
+        <a type="button" class="btn btn-primary repo" href="https://store-hhy8.onrender.com/api-docs/" target="_blank">
+            click to get Github repo
+        </a>
+        <a type="button" class="btn btn-warning" href="https://github.com/AryanTapre/tshirtstore" target="_blank">
+            click to see Docs
+        </a>
+
+    </div>
+
+
+</main>
+</body>
+</html>
