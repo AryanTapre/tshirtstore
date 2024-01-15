@@ -19,7 +19,7 @@ exports.userMiddleware = bigPromise(async (request,response,next) => {
     const token =
                   request.cookies.accessToken ||
                   request.header("Authorization").replace("Bearer ","") ||
-                  request.body.token;
+                  request.body.accessToken;
 
     if(!token) {
         return next(new customError("you are not LoggedIn","you are not LoggedIn",500));

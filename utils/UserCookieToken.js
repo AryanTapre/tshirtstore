@@ -59,9 +59,6 @@ const setAccessRefreshTokens = async (user, response) => {
                     })
             )
         })
-
-
-
     }
     catch (error) {
        return new CustomError(`unable to send cookie :${error}`,`unable to send cookie :${error}`,500);

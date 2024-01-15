@@ -1,0 +1,84 @@
+openapi: 3.0.0
+info:
+    title: TshirtStore backend REST API
+    description: write something here...
+    version: 0.0.1
+    contact:
+      email: taprearyan7@gmail.com
+
+servers:
+  - url: "{protocol-scheme}://{domain}:{port}/api/{api-version}"
+    description: Production URL
+    variables:
+      protocol-scheme:
+        default: https
+      domain:
+        default: store-hhy8.onrender.com
+      port:
+        default: 5000
+      api-version:
+        default: v1
+
+  - url: "{scheme}://{domain}:{port}/api/{api-version}"
+    description: Development URL
+    variables:
+      scheme:
+        default: http
+      domain:
+        default: 127.0.0.1
+      port:
+        default: 5000
+      api-version:
+        default: v1
+
+components:
+  securitySchemes:
+    cookieAuth:
+      type: apikey
+      in: cookie
+      name: token
+    BearerAuth:
+      type: http
+      scheme: bearer
+    OAuth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://example.com/oauth/authorize
+          tokenUrl: https://example.com/oauth/token
+          scopes:
+            email: Returns user email
+            profile: Returns links for user profile
+            displayName: Returns user's family name
+
+paths:
+  /login:
+    post:
+      tags:
+        - login and signup
+      description: login the user with its email and password
+      consumes:
+        - application/json
+      produces:
+        - applicaion/json
+      requestBody:
+        description: takes json object consist of email and password
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                password:
+                  type: string
+
+              example:
+                email: harshadmehta
+                password: grow.more@123
+
+
+
+
+

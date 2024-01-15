@@ -33,15 +33,15 @@ const session = require('express-session');
 app.use(cors({
     origin: process.env.CORS_ORIGIN,
     credentials: true,
-    optionsSuccessStatus: 200,
-    preflightContinue: true
+    // optionsSuccessStatus: 200,
+    // preflightContinue: true
 }))
 
-app.options('*',(request,response) => {
-    response.header('Access-Control-Allow-Headers','Authorization');
-    response.header('Access-Control-Allow-Headers','RefreshToken');
-    response.sendStatus(204) // empty response for Successful pre-flight
-})
+// app.options('*',(request,response) => {
+//     response.header('Access-Control-Allow-Headers','Authorization');
+//     response.header('Access-Control-Allow-Headers','RefreshToken');
+//     response.sendStatus(204) // empty response for Successful pre-flight
+// })
 
 app.use(express.json({
     limit: "100kb",
