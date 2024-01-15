@@ -1,7 +1,12 @@
 openapi: 3.0.0
 info:
     title: TshirtStore backend REST API
-    description: write something here...
+    description:
+              A production ready backend live hosted on render.com for handling Request and Response for Tshirtstore application.
+              Comes with latest OpenAuthorization with Google, Github and Facebook .
+              A digital assess management with Cloudinary.
+              Email functionality for resetting password with mailTrap.
+              As usual build upon most well known runtime NodeJS.
     version: 0.0.1
     contact:
       email: taprearyan7@gmail.com
