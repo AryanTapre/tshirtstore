@@ -45,17 +45,17 @@ app.use(cors({
 
 app.use(express.json({
     limit: "100kb",
-    inflate: true, // allow compressed bodies
-    strict: true, // Enables only accepting arrays and object
-    type: "*/*" // accept any format data..
+    // inflate: true, // allow compressed bodies
+    // strict: true, // Enables only accepting arrays and object
+    // type: "*/*" // accept any format data..
 }))
 
 app.use(express.urlencoded({
     extended: true,
-    inflate:true,
-    limit: "100kb",
-    parameterLimit: 1000,
-    type: "*/x-www-form-urlencoded"
+    // inflate:true,
+    // limit: "100kb",
+    // parameterLimit: 1000,
+    // type: "*/x-www-form-urlencoded"
 }))
 
 app.use(cookieParser());
