@@ -104,6 +104,23 @@ Steps to get locally:
 - or visit: `https://github.com/AryanTapre/tshirtstore`
 
 
+> *CORS*
+```javascript
+    app.use(cors({
+    origin: process.env.CORS_ORIGIN,
+    credentials: true,
+     optionsSuccessStatus: 200,
+     preflightContinue: true
+}))
+
+     app.options('*',(request,response) => {
+     response.header('Access-Control-Allow-Headers','Authorization');
+     response.header('Access-Control-Allow-Headers','RefreshToken');
+     response.sendStatus(204) // empty response for Successful pre-flight
+ })
+
+```
+
 > *Let's talk about Authentication, Authorization and Resource Server*
 
 - Here,Authentication and Authorization is implemented using middlewares, specify control handler are also avaliable
