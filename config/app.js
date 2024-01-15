@@ -2,6 +2,7 @@
 require('dotenv').config({
     path: './environmentVariables/.env'
 })
+
 const express = require('express');
 const axios = require('axios');
 const cors = require('cors');
@@ -11,7 +12,9 @@ const app = express();
 const morgan = require('morgan');
 const fileUpload = require('express-fileupload');
 const cookieParser = require('cookie-parser');
+
 const swaggerUI = require('swagger-ui-express');
+const {SwaggerTheme} = require('swagger-themes');
 const yaml = require('yamljs');
 const fileSystem = require('fs');
 
@@ -80,9 +83,15 @@ app.use(passport.initialize(githubPassportConfig));
 app.use(morgan('tiny'));
 
 //swagger
+const theme = new SwaggerTheme('v3');
+const themeOptions = {
+        explorer: false,
+        customCss: theme.getBuffer('dark')
+}
+
 const file = fileSystem.readFileSync('./swagger.yaml','utf-8');
 const swaggerDocument = yaml.parse(file);
-app.use('/api-docs',swaggerUI.serve,swaggerUI.setup(swaggerDocument));
+app.use('/api-docs',swaggerUI.serve,swaggerUI.setup(swaggerDocument,themeOptions));
 
 //custom middlewares
 app.use(fileUpload({

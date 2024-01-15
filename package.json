@@ -3,8 +3,6 @@
   "version": "1.0.0",
   "description": "a t-shirt store ",
   "main": "index.js",
-
-
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js"
@@ -41,6 +39,7 @@
     "passport-google-oauth20": "^2.0.0",
     "razorpay": "^2.9.2",
     "stripe": "^14.1.0",
+    "swagger-themes": "^1.2.30",
     "swagger-ui-express": "^5.0.0",
     "validator": "^13.11.0",
     "yamljs": "^0.3.0"
