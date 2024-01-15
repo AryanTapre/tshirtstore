@@ -50,7 +50,7 @@ const {
 } = require('../controllers/userController');
 
 // TODO: login routes
-loginRouter.route("/login").post(login);
+loginRouter.route("/login").post(login); //🆗
 deleteUserDataRouter.route("/users/delete-data").get(deleteUserData);
 
 googleLoginRouter.route("/login/auth/google").get(googleAuthenticate,googleLogin);
@@ -62,22 +62,22 @@ facebookCallbackHandlerRouter.route("/auth/facebook/callback").get(passport.auth
 githubLoginRouter.route("/login/auth/github").get(githubAuthentication,githubLogin);
 githubCallbackHandlerRouter.route("/auth/github/callback").get(passport.authenticate('github'),githubCallbackHandler);
 
-signupRouter.route("/signup").post(signup);
-logoutRouter.route("/logout").get(userMiddleware,logout);
-regenerateAccessRefreshTokenRouter.route("/refresh-token").get(regenerateAccessRefreshTokens);
+signupRouter.route("/signup").post(signup); // 🆗
+logoutRouter.route("/logout").get(userMiddleware,logout); // 🆗🆗
+regenerateAccessRefreshTokenRouter.route("/refresh-token").post(regenerateAccessRefreshTokens); // 🆗
 
-forgetPasswordRouter.route("/forgetpassword").post(forgetPassword);
-passwordResetRouter.route("/password/reset/:token").post(passwordReset);
+forgetPasswordRouter.route("/forgetpassword").post(forgetPassword); // 🆗
+passwordResetRouter.route("/password/reset/:token").post(passwordReset); // 🆗
 
-dashboardRouter.route("/dashboard").get(userMiddleware,userDashboard);
-changePasswordRouter.route("/password/update").post(userMiddleware,changePassword);
-userUpdateRouter.route("/dashboard/update").post(userMiddleware,updateUser);
+dashboardRouter.route("/dashboard").get(userMiddleware,userDashboard); // 🆗
+changePasswordRouter.route("/password/update").post(userMiddleware,changePassword); // 🆗
+userUpdateRouter.route("/dashboard/update").post(userMiddleware,updateUser); // 🆗
 
 //admin only route
-adminAllUserRouter.route("/admin/users").get(userMiddleware,customRole('admin'),adminAllUsers);
+adminAllUserRouter.route("/admin/users").get(userMiddleware,customRole('admin'),adminAllUsers); // 🆗
 
 //Manager only Route
-managerAllUserRouter.route("/manager/users").get(userMiddleware,customRole('manager'),managerAllUsers);
+managerAllUserRouter.route("/manager/users").get(userMiddleware,customRole('manager'),managerAllUsers); // 🆗
 
 
 adminUserRouter.route("/admin/user/:id")
