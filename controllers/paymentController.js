@@ -1,6 +1,7 @@
 const bigPromise = require('../middlewares/bigPromise');
 const Razorpay = require("razorpay");
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
+
 const captureStripePayment = async (request,response,next) => {
     const paymentIntent = await stripe.paymentIntents.create({
         amount: request.body.amount,

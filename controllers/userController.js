@@ -5,7 +5,7 @@ const setAccessRefreshTokens = require('../utils/UserCookieToken');
 const cloudinary = require('cloudinary');
 const mailHelper = require('../utils/EmailHelper');
 const crypto = require('crypto');
-const passport = require('passport')
+const passport = require('passport');
 const jwt = require('jsonwebtoken');
 
 const deleteUserData = (request,response,_) => {
@@ -113,7 +113,7 @@ const signupOperations =  async (request,response,next) => {
         const userPhoto = request.files.userphoto;
         const options = {
             folder: "Users",
-            crop:"scale"
+            crop:"scale"    
         }
       cloudinaryResult = await cloudinary.v2.uploader.upload(userPhoto.tempFilePath,options);
     }
@@ -213,6 +213,7 @@ const forgetPasswordOperation = async (request,response,next) => {
 
     const forgetToken = user.getForgetPasswordToken(); // generating forget token
     await user.save({validateBeforeSave: false}) // saving to the databaseMedia....
+
     
     const forgetPasswordURL = `${request.protocol}://${request.get("host")}/api/v1/password/reset/${forgetToken}`;
 
@@ -333,7 +334,7 @@ const selectDataToUpdate = (...data) => {
     }
     return values;
 }
-
+    
 
 
 const updateUser = async (request,response,next) => {

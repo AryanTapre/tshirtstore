@@ -76,7 +76,7 @@ const adminnewProduct = async (request,response,next) => {
         category: productCategory,
         brand: productBrand,
         stock: productStock,
-        user: productManageUser
+        user: productManageUser  
     })
 
     response.status(201).json({

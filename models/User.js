@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const validator = require('validator');
-const bcrypt = require('bcryptjs')
+const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const crypto = require('crypto');
 
@@ -51,7 +51,7 @@ const userSchema = new mongoose.Schema({
             type: Boolean,
             default : false
         }
-    }
+    }   
 })
 
 //FIXME: pre-hooks 
@@ -71,7 +71,7 @@ userSchema.methods.isValidatePassword = async function(userPassword) {
 }
 
 //generating jwt token
-// userSchema.methods.getJwtToken = function() {
+// userSchema.methods.getJwtToken = function() {    
 //     return jwt.sign({id: this._id},process.env.JWT_SECRET_KEY,{
 //         expiresIn: process.env.JWT_SECRET_EXPIRY
 //     })
