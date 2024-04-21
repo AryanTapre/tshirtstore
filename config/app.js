@@ -24,7 +24,7 @@ const facebookPassportConfig = require('../passport/facebookPassport');
 const githubPassportConfig = require('../passport/githubPassport');
 
 const session = require('express-session');
-
+    
 //FIXME: default config
 // {
 //     "origin": "*",
@@ -41,7 +41,7 @@ app.use(cors({
 }))
 
 app.options('*',(request,response) => {
-    response.header('Access-Control-Allow-Headers','Authorization');
+        response.header('Access-Control-Allow-Headers','Authorization');
     response.header('Access-Control-Allow-Headers','RefreshToken');
     response.sendStatus(204) // empty response for Successful pre-flight
 })

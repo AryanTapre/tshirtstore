@@ -1,8 +1,11 @@
 const mongoose = require('mongoose');
-const  express = require("express");
+const  express = require("express");        
 const app = express();
 
 const DB_NAME = require("../constants")
+
+// @ts-ignore
+
 
 //TODO: PROFESSIONAL METHOD TO CONNECT WITH DATABASE
 const connectWithDB = async () => {
